@@ -43,11 +43,15 @@
   }
 <script type="text/javascript">
   document.getElementById('messageButton').onclick = function(){
-  ThunkableWebviewerExtension
+  ThunkableWebviewerExtension.postMessage(label);}
+  // TAKE ANSWER THEN SEND TO APP
+  // LABEL IS THE ANSWER
+  ThunkableWebviewerExtension.receiveMessage(function(message){
+    document.getElementById('messageDisplay').innerHTML = message;});
+  // Receiving Message
+ 
   
-  
-  
-  
+ // ThunkableWebviewerExtension
   
   
   
