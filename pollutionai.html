@@ -4,9 +4,7 @@
 </head>
 <body>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  // Connecting Web Viewer to Thunkable
-  <script src="https://thunkable.github.io/webviewer-extension/thunkableWebviewerExtension.js" type="text/javascript"></script>
-  // Creating a Message
+    <script src="https://thunkable.github.io/webviewer-extension/thunkableWebviewerExtension.js" type="text/javascript"></script>
   <span id="messageDisplay"></span>
   <h1><div>CHANGE ME</div>
     <br /><button type="button" id="messageButton">CHANGE BUTTON TEXT</button>
@@ -51,8 +49,12 @@
   // Receiving Message
  
   
- // ThunkableWebviewerExtension
-  
+ThunkableWebviewerExtension.receiveMessageWithReturnValue(function(message, callback){
+  if(message==='slow message'){
+    setTimeout(() =>callback('slow response'), 2000);
+               }
+               else{callback('fast response');}
+});
   
   
   
